@@ -24,5 +24,6 @@ public class AppListener implements ServletContextListener {
         dao.save(new Movie("Blade Runner 2049", 163, LocalDate.ofYearDay(2017, 1)));
         dao.save(new Movie("Princesse Mononoké", 133, LocalDate.ofYearDay(1997, 1)));
         dao.save(new Movie("Transformers", 224, LocalDate.ofYearDay(2007, 1)));
+
     }
 }
