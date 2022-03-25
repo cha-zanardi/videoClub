@@ -1,5 +1,6 @@
 package com.videoclub.dao;
 
+import com.videoclub.dao.base.ActorDao;
 import com.videoclub.dao.base.MovieDao;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -18,5 +19,9 @@ public final class DaoFactory {
 
     public static MovieDao getMovieDao(){
         return new MovieDaoImpl();
+    }
+
+    public static ActorDao getActorDao(){
+        return new ActorDaoImpl();
     }
 }
