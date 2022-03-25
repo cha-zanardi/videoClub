@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0"
+xmlns="http://java.sun.com/xml/ns/persistence"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="videoclub" transaction-type="RESOURCE_LOCAL">
+	
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+	
+	
+		<properties>
+			<property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/videoclub" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="" />
+			
+			<!-- On utilise le moteur innoDB -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			
+			<!-- On imprime les requêtes SQL générées par Hibernate dans la console -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			
+			
+			<!-- Permet d'exécuter les requêtes DDL pour la génération de la base de données -->
+			<!-- Valeurs possibles : validate, update, create, create-drop -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			
+		
+		</properties>
+		
+	</persistence-unit> 
+	
+</persistence>
