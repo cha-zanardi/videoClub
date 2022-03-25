@@ -69,11 +69,48 @@ public class MovieDaoImpl implements MovieDao {
 
     @Override
     public boolean update(Movie object) {
-        return false;
+        EntityManager em = null;
+        EntityTransaction transaction = null;
+        Movie movie = null;
+
+        try {
+            em =  DaoFactory.getEmf().createEntityManager();
+            transaction = em.getTransaction();
+            transaction.begin();
+
+            movie = em.merge(object);
+
+            transaction.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            return false;
+        }
+        return true;
     }
 
     @Override
     public void delete(Long aLong) {
+        EntityManager em = null;
+        EntityTransaction transaction = null;
 
+        try {
+            em = DaoFactory.getEmf().createEntityManager();
+            transaction = em.getTransaction();
+            transaction.begin();
+
+            em.remove(findById(aLong));
+
+            transaction.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
     }
 }
