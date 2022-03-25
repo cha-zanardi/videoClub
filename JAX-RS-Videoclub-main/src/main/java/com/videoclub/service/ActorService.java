@@ -1,8 +1,9 @@
 package com.videoclub.service;
 
-import com.videoclub.controller.model.Actor;
+import com.videoclub.dao.entity.Actor;
 import com.videoclub.controller.model.MovieReponse;
 import com.videoclub.dao.DaoFactory;
+import com.videoclub.dao.base.ActorDao;
 import com.videoclub.dao.base.MovieDao;
 
 import java.util.List;

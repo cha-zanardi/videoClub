@@ -27,8 +27,8 @@ public class Actor implements Serializable {
         this.lastname = lastname;
     }
 
-    public ActorReponse toDto(){
-        ActorReponse m = new ActorReponse();
+    public Actor toDto(){
+        Actor m = new Actor();
         m.setId(this.id);
         m.setFirstname(this.firstname);
         m.setLastname(this.lastname);

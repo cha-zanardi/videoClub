@@ -1,11 +1,12 @@
 package com.videoclub.controller;
 
-import com.videoclub.controller.model.Actor;
+import com.videoclub.dao.entity.Actor;
 import com.videoclub.controller.model.CreateMovie;
 import com.videoclub.controller.model.MovieReponse;
 import com.videoclub.dao.DaoFactory;
 import com.videoclub.dao.base.MovieDao;
 import com.videoclub.dao.entity.Movie;
+import com.videoclub.service.ActorService;
 import com.videoclub.service.MovieService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
