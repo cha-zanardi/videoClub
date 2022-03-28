@@ -2,6 +2,7 @@ package com.videoclub.dao;
 
 import com.videoclub.dao.base.ActorDao;
 import com.videoclub.dao.base.MovieDao;
+import com.videoclub.dao.base.TagDao;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import lombok.Getter;
@@ -23,5 +24,9 @@ public final class DaoFactory {
 
     public static ActorDao getActorDao(){
         return new ActorDaoImpl();
+    }
+
+    public static TagDao getTagDao() {
+        return new TagDaoImpl();
     }
 }

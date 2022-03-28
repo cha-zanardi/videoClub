@@ -14,7 +14,7 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 
-@Path("/movies")
+@Path("movies")
 public class MovieController {
 
     @Inject

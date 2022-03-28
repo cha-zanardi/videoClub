@@ -3,8 +3,10 @@ package com.videoclub;
 import com.videoclub.dao.DaoFactory;
 import com.videoclub.dao.base.ActorDao;
 import com.videoclub.dao.base.MovieDao;
+import com.videoclub.dao.base.TagDao;
 import com.videoclub.dao.entity.Actor;
 import com.videoclub.dao.entity.Movie;
+import com.videoclub.dao.entity.Tag;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
@@ -54,5 +56,10 @@ public class AppListener implements ServletContextListener {
         actordao.save(new Actor("Megan", "Fox"));
         actordao.save(new Actor("Rachael", "Taylor"));
 
+        // Tag original insertion
+        TagDao tagdao = DaoFactory.getTagDao();
+        tagdao.save(new Tag("action"));
+        tagdao.save(new Tag("bittersweet"));
+        tagdao.save(new Tag("kdrama"));
     }
 }
